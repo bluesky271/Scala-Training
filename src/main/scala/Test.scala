@@ -1,5 +1,10 @@
 object Test extends App {
 
+  var userDataBase = Map[String, User]
+
+  case class User(userName: String, group: String, password: String, userDefined: UserDetails)
+  case class UserDetails(firstName: String, lastName: String, age: Int, nationality: String)
+
   for (words <- args) patternMatchInput(words)
 
   def patternMatchInput(word: String) = {
